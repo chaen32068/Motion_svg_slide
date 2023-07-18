@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&family=Rajdhani:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  padding: 25vh 10vh 15vh;
+  perspective: 400px;
+}
+body main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body main h1 {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  font: 34px/1 "Rajdhani";
+  color: #555;
+}
+body main h1::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  display: block;
+  width: 50px;
+  height: 1px;
+  background-color: #111;
+}
+body main .btnUp {
+  position: absolute;
+  bottom: 160px;
+  left: -70px;
+  display: block;
+  width: 61px;
+  height: 50px;
+}
+body main .btnUp::before, body main .btnUp::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform-origin: right top;
+  display: block;
+  width: 1px;
+  height: 20px;
+  background-color: #777;
+  transition: 0.35s 0.2s;
+}
+body main .btnUp::before {
+  transform: rotate(45deg);
+}
+body main .btnUp::after {
+  transform: rotate(-45deg);
+}
+body main .btnUp span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: 1px;
+  height: 40px;
+  background-color: #777;
+  transition: 0.35s;
+}
+body main .btnUp p {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font: 12px/1 "orbitron";
+  color: #111;
+  text-align: center;
+  letter-spacing: 2px;
+  transition: 0.35s;
+}
+body main .btnUp:hover::before {
+  transform: rotate(45deg) translateY(-40px);
+  opacity: 0;
+}
+body main .btnUp:hover::after {
+  transform: rotate(-45deg) translateY(-40px);
+  opacity: 0;
+}
+body main .btnUp:hover span {
+  transform: translateY(-40px);
+  opacity: 0;
+}
+body main .btnUp:hover p {
+  top: 50%;
+  opacity: 1;
+}
+body main .btnDown {
+  position: absolute;
+  bottom: 0;
+  left: -70px;
+  display: block;
+  width: 61px;
+  height: 50px;
+}
+body main .btnDown::before, body main .btnDown::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform-origin: right bottom;
+  display: block;
+  width: 1px;
+  height: 20px;
+  background-color: #777;
+  transition: 0.35s 0.2s;
+}
+body main .btnDown::before {
+  transform: rotate(-45deg);
+}
+body main .btnDown::after {
+  transform: rotate(45deg);
+}
+body main .btnDown span {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: block;
+  width: 1px;
+  height: 40px;
+  background-color: #777;
+  transition: 0.35s;
+}
+body main .btnDown p {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font: 12px/1 "orbitron";
+  color: #111;
+  text-align: center;
+  letter-spacing: 2px;
+  transition: 0.35s;
+}
+body main .btnDown:hover::before {
+  transform: rotate(-45deg) translateY(40px);
+  opacity: 0;
+}
+body main .btnDown:hover::after {
+  transform: rotate(45deg) translateY(40px);
+  opacity: 0;
+}
+body main .btnDown:hover span {
+  transform: translateY(40px);
+  opacity: 0;
+}
+body main .btnDown:hover p {
+  top: 50%;
+  opacity: 1;
+}
+body main .panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body main .panel li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  perspective: 400px;
+}
+body main .panel li .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.8s;
+}
+body main .panel li .bg .pic {
+  position: absolute;
+  right: 5vw;
+  bottom: 5vh;
+  width: 33vw;
+}
+body main .panel li .bg .pic path {
+  stroke: #111;
+  stroke-width: 1;
+  stroke-dasharray: 1300;
+  stroke-dashoffset: 1300;
+  transition: stroke-dashoffset 2s 0.5s, fill 0.5s 1.5s;
+}
+body main .panel li:nth-of-type(1) .bg {
+  background: #ccfdea;
+}
+body main .panel li:nth-of-type(2) .bg {
+  background: #ccf6fd;
+}
+body main .panel li:nth-of-type(3) .bg {
+  background: #f0ffc8;
+}
+body main .panel li:nth-of-type(4) .bg {
+  background: #fffac8;
+}
+body main .panel li.on .bg {
+  transform: translateY(0) rotateX(0);
+  opacity: 1;
+}
+body main .panel li.on .bg path {
+  stroke-dashoffset: 0;
+}
+body main .panel li.up .bg {
+  transform: translateY(-80%) rotateX(50deg);
+  opacity: 0;
+}
+body main .panel li.down .bg {
+  transform: translateY(80%) rotateX(-50deg);
+  opacity: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
